@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Training Blog | Lake Norman Dog Training</title>
+    <meta name="description" content="Expert dog training tips, behavior advice, and insights from the professional trainers at Lake Norman Dog Training. New articles published weekly.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/Lake-norman-logo.png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lakenormandogtraining.com/pages/blog.html">
+    <meta property="og:title" content="Dog Training Blog | Lake Norman Dog Training">
+    <meta property="og:description" content="Expert dog training tips, behavior advice, and insights from the professional trainers at Lake Norman Dog Training. New articles published weekly.">
+    <meta property="og:image" content="../images/Lake-norman-logo.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://lakenormandogtraining.com/pages/blog.html">
+    <meta property="twitter:title" content="Dog Training Blog | Lake Norman Dog Training">
+    <meta property="twitter:description" content="Expert dog training tips, behavior advice, and insights from the professional trainers at Lake Norman Dog Training. New articles published weekly.">
+    <meta property="twitter:image" content="../images/Lake-norman-logo.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://lakenormandogtraining.com/pages/blog.html">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&family=Caveat&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <style>
+        /* Blog Page Specific Styles */
+        .blog-hero {
+            background-color: var(--secondary);
+            position: relative;
+        }
+        
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+            z-index: 1;
+        }
+        
+        .blog-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: var(--spacing-xxl) 0;
+            color: white;
+        }
+        
+        .blog-hero h1 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .blog-hero p {
+            max-width: 800px;
+            margin: 0 auto var(--spacing-lg);
+            font-size: 1.2rem;
+        }
+        
+        .blog-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-xl);
+        }
+        
+        @media (min-width: 992px) {
+            .blog-layout {
+                grid-template-columns: 3fr 1fr;
+            }
+        }
+        
+        .blog-main {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xl);
+        }
+        
+        .blog-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xl);
+        }
+        
+        .sidebar-section {
+            background-color: white;
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .sidebar-section h3 {
+            margin-top: 0;
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .category-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .category-list li {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color var(--transition-medium);
+        }
+        
+        .category-list a:hover {
+            color: var(--primary);
+        }
+        
+        .category-count {
+            background-color: var(--light-gray);
+            border-radius: var(--border-radius-sm);
+            padding: 2px 8px;
+            font-size: 0.8rem;
+        }
+        
+        .popular-posts {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .popular-post {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .popular-post:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .popular-post-image {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .popular-post-content {
+            flex-grow: 1;
+        }
+        
+        .popular-post-title {
+            margin: 0 0 var(--spacing-xs) 0;
+            font-size: 1rem;
+        }
+        
+        .popular-post-title a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color var(--transition-medium);
+        }
+        
+        .popular-post-title a:hover {
+            color: var(--primary);
+        }
+        
+        .popular-post-meta {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+        
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+        }
+        
+        .tag {
+            background-color: var(--light-gray);
+            border-radius: var(--border-radius-sm);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            font-size: 0.8rem;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: all var(--transition-medium);
+        }
+        
+        .tag:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+        
+        .newsletter-form input[type="email"] {
+            padding: var(--spacing-sm);
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius-md);
+        }
+        
+        .featured-post {
+            background-color: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .featured-post-image {
+            height: 400px;
+            overflow: hidden;
+        }
+        
+        .featured-post-content {
+            padding: var(--spacing-lg);
+        }
+        
+        .featured-post-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .featured-post-category {
+            background-color: var(--secondary);
+            color: white;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--border-radius-sm);
+            font-size: 0.8rem;
+            text-decoration: none;
+        }
+        
+        .featured-post h2 {
+            margin-top: 0;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .featured-post-excerpt {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .blog-post {
+            background-color: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        @media (min-width: 768px) {
+            .blog-post {
+                flex-direction: row;
+                height: 300px;
+            }
+        }
+        
+        .blog-post-image {
+            height: 200px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        @media (min-width: 768px) {
+            .blog-post-image {
+                width: 300px;
+                height: 100%;
+            }
+        }
+        
+        .blog-post-content {
+            padding: var(--spacing-lg);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-post-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .blog-post-category {
+            background-color: var(--secondary);
+            color: white;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--border-radius-sm);
+            font-size: 0.8rem;
+            text-decoration: none;
+        }
+        
+        .blog-post h3 {
+            margin-top: 0;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .blog-post-excerpt {
+            margin-bottom: var(--spacing-md);
+            flex-grow: 1;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .pagination-item {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--border-radius-sm);
+            background-color: white;
+            box-shadow: var(--shadow-sm);
+            text-decoration: none;
+            color: var(--text-color);
+            transition: all var(--transition-medium);
+        }
+        
+        .pagination-item:hover {
+            background-color: var(--light-gray);
+        }
+        
+        .pagination-item.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .pagination-item.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../images/Lake-norman-logo.png" alt="Lake Norman Dog Training Logo">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <button class="mobile-menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+                        <span class="hamburger"></span>
+                    </button>
+                    <ul class="nav-list">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="locations.html">Locations</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="blog.html" class="active">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-cta">
+                    <a href="contact.html" class="btn btn-primary">Free Consultation</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
+        <div class="container">
+            <div class="blog-hero-content">
+                <h1>Dog Training Tips & Insights</h1>
+                <p>Expert advice, training techniques, and behavior insights from our professional dog trainers</p>
+                <div class="search-box">
+                    <form action="#" method="get">
+                        <input type="text" placeholder="Search articles..." name="search">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="section">
+        <div class="container">
+            <div class="blog-layout">
+                <div class="blog-main">
+                    <!-- Featured Post -->
+                    <div class="featured-post">
+                        <div class="featured-post-image">
+                            <div class="image-placeholder"></div>
+                        </div>
+                        <div class="featured-post-content">
+                            <div class="featured-post-meta">
+                                <a href="#" class="featured-post-category">Behavior</a>
+                                <span class="featured-post-date">August 1, 2025</span>
+                                <span class="featured-post-author">By Sarah Thompson</span>
+                            </div>
+                            <h2>Understanding Leash Reactivity: Causes and Solutions</h2>
+                            <div class="featured-post-excerpt">
+                                <p>Does your dog lunge, bark, or growl when seeing other dogs while on leash? This common behavior challenge, known as leash reactivity, can transform peaceful walks into stressful ordeals. In this comprehensive guide, we'll explore the underlying causes of leash reactivity and provide practical, positive reinforcement-based solutions to help your dog feel more comfortable and confident during walks.</p>
+                            </div>
+                            <a href="blog/understanding-leash-reactivity.html" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Regular Posts -->
+                    <div class="blog-post">
+                        <div class="blog-post-image">
+                            <div class="image-placeholder"></div>
+                        </div>
+                        <div class="blog-post-content">
+                            <div class="blog-post-meta">
+                                <a href="#" class="blog-post-category">Puppy Training</a>
+                                <span class="blog-post-date">July 25, 2025</span>
+                                <span class="blog-post-author">By Jennifer Williams</span>
+                            </div>
+                            <h3>The Critical Socialization Window: Making the Most of Your Puppy's First 16 Weeks</h3>
+                            <div class="blog-post-excerpt">
+                                <p>The first 16 weeks of a puppy's life represent a critical period for socialization that can shape their behavior for years to come. During this window, puppies are uniquely receptive to new experiences, making it the ideal time to introduce them to different people, animals, environments, and situations...</p>
+                            </div>
+                            <a href="blog/puppy-socialization-window.html" class="btn btn-text">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-post">
+                        <div class="blog-post-image">
+                            <div class="image-placeholder"></div>
+                        </div>
+                        <div class="blog-post-content">
+                            <div class="blog-post-meta">
+                                <a href="#" class="blog-post-category">Training Tips</a>
+                                <span class="blog-post-date">July 18, 2025</span>
+                                <span class="blog-post-author">By Michael Rodriguez</span>
+                            </div>
+                            <h3>Beyond the Basics: 5 Advanced Commands Every Well-Trained Dog Should Know</h3>
+                            <div class="blog-post-excerpt">
+                                <p>Once your dog has mastered basic commands like sit, stay, and come, it's time to expand their repertoire with more advanced skills. These advanced commands not only provide mental stimulation but also enhance safety and make daily life with your dog more enjoyable...</p>
+                            </div>
+                            <a href="blog/advanced-commands.html" class="btn btn-text">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-post">
+                        <div class="blog-post-image">
+                            <div class="image-placeholder"></div>
+                        </div>
+                        <div class="blog-post-content">
+                            <div class="blog-post-meta">
+                                <a href="#" class="blog-post-category">Behavior</a>
+                                <span class="blog-post-date">July 10, 2025</span>
+                                <span class="blog-post-author">By David Chen</span>
+                            </div>
+                            <h3>Separation Anxiety in Dogs: Recognition, Management, and Treatment</h3>
+                            <div class="blog-post-excerpt">
+                                <p>Separation anxiety is one of the most common behavioral issues affecting dogs today, particularly as many owners return to in-person work after extended periods at home. This condition goes beyond simple boredom or mild distress when left alone—it's a genuine panic response that can lead to destructive behaviors...</p>
+                            </div>
+                            <a href="blog/separation-anxiety.html" class="btn btn-text">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-post">
+                        <div class="blog-post-image">
+                            <div class="image-placeholder"></div>
+                        </div>
+                        <div class="blog-post-content">
+                            <div class="blog-post-meta">
+                                <a href="#" class="blog-post-category">Lake Life</a>
+                                <span class="blog-post-date">July 3, 2025</span>
+                                <span class="blog-post-author">By Sarah Thompson</span>
+                            </div>
+                            <h3>Water Safety for Dogs: Preparing Your Pup for Lake Norman Adventures</h3>
+                            <div class="blog-post-excerpt">
+                                <p>Living in the Lake Norman area offers unique opportunities for enjoying water activities with your four-legged companion. However, water safety for dogs requires preparation, training, and awareness. Whether you're planning boat days, dock diving, or shoreline explorations, this guide will help ensure your dog stays safe while having fun on the water...</p>
+                            </div>
+                            <a href="blog/water-safety-for-dogs.html" class="btn btn-text">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <a href="#" class="pagination-item disabled"><i class="fas fa-chevron-left"></i></a>
+                        <a href="#" class="pagination-item active">1</a>
+                        <a href="#" class="pagination-item">2</a>
+                        <a href="#" class="pagination-item">3</a>
+                        <a href="#" class="pagination-item">4</a>
+                        <a href="#" class="pagination-item"><i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="blog-sidebar">
+                    <!-- Categories -->
+                    <div class="sidebar-section">
+                        <h3>Categories</h3>
+                        <ul class="category-list">
+                            <li><a href="#">Puppy Training <span class="category-count">12</span></a></li>
+                            <li><a href="#">Behavior Modification <span class="category-count">18</span></a></li>
+                            <li><a href="#">Basic Obedience <span class="category-count">15</span></a></li>
+                            <li><a href="#">Advanced Training <span class="category-count">9</span></a></li>
+                            <li><a href="#">Lake Life with Dogs <span class="category-count">7</span></a></li>
+                            <li><a href="#">Health & Wellness <span class="category-count">11</span></a></li>
+                            <li><a href="#">Training Tips <span class="category-count">22</span></a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Popular Posts -->
+                    <div class="sidebar-section">
+                        <h3>Popular Posts</h3>
+                        <ul class="popular-posts">
+                            <li class="popular-post">
+                                <div class="popular-post-image">
+                                    <div class="image-placeholder"></div>
+                                </div>
+                                <div class="popular-post-content">
+                                    <h4 class="popular-post-title"><a href="#">The First 30 Days: Essential Training for Your New Rescue Dog</a></h4>
+                                    <div class="popular-post-meta">June 15, 2025</div>
+                                </div>
+                            </li>
+                            <li class="popular-post">
+                                <div class="popular-post-image">
+                                    <div class="image-placeholder"></div>
+                                </div>
+                                <div class="popular-post-content">
+                                    <h4 class="popular-post-title"><a href="#">5 Games That Teach Your Dog Impulse Control</a></h4>
+                                    <div class="popular-post-meta">May 22, 2025</div>
+                                </div>
+                            </li>
+                            <li class="popular-post">
+                                <div class="popular-post-image">
+                                    <div class="image-placeholder"></div>
+                                </div>
+                                <div class="popular-post-content">
+                                    <h4 class="popular-post-title"><a href="#">Understanding Dog Body Language: What Your Dog Is Trying to Tell You</a></h4>
+                                    <div class="popular-post-meta">April 30, 2025</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Tags -->
+                    <div class="sidebar-section">
+                        <h3>Tags</h3>
+                        <div class="tag-cloud">
+                            <a href="#" class="tag">Puppies</a>
+                            <a href="#" class="tag">Leash Training</a>
+                            <a href="#" class="tag">Behavior</a>
+                            <a href="#" class="tag">Socialization</a>
+                            <a href="#" class="tag">Anxiety</a>
+                            <a href="#" class="tag">Positive Reinforcement</a>
+                            <a href="#" class="tag">Lake Norman</a>
+                            <a href="#" class="tag">Recall</a>
+                            <a href="#" class="tag">Obedience</a>
+                            <a href="#" class="tag">Enrichment</a>
+                            <a href="#" class="tag">Reactivity</a>
+                            <a href="#" class="tag">Water Safety</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Newsletter -->
+                    <div class="sidebar-section">
+                        <h3>Subscribe to Our Newsletter</h3>
+                        <p>Get the latest training tips and dog behavior insights delivered directly to your inbox.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need Personalized Training Advice?</h2>
+                <p>Our professional trainers are here to help with your specific dog training challenges.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary btn-large">Schedule a Consultation</a>
+                    <a href="services.html" class="btn btn-secondary btn-large">Explore Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../images/Lake-norman-logo.png" alt="Lake Norman Dog Training Logo">
+                    <p>Your Pack is Our Passion</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="locations.html">Locations</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="testimonials.html">Testimonials</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="services/basic-obedience.html">Basic Obedience</a></li>
+                            <li><a href="services/puppy-training.html">Puppy Training</a></li>
+                            <li><a href="services/behavior-modification.html">Behavior Modification</a></li>
+                            <li><a href="services/private-training.html">Private Training</a></li>
+                            <li><a href="services/group-classes.html">Group Classes</a></li>
+                            <li><a href="services/service-dog-training.html">Service Dog Preparation</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Service Areas</h3>
+                        <ul>
+                            <li><a href="locations/mooresville.html">Mooresville</a></li>
+                            <li><a href="locations/cornelius.html">Cornelius</a></li>
+                            <li><a href="locations/davidson.html">Davidson</a></li>
+                            <li><a href="locations/huntersville.html">Huntersville</a></li>
+                            <li><a href="locations/denver.html">Denver</a></li>
+                            <li><a href="locations.html">View All Locations</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Contact Us</h3>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-phone"></i> <a href="tel:9876543">987-6543</a></li>
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:info@lakenormandogtraining.com">info@lakenormandogtraining.com</a></li>
+                            <li><i class="fas fa-map-marker-alt"></i> Lake Norman, NC</li>
+                        </ul>
+                        <h3>Hours</h3>
+                        <ul class="hours-info">
+                            <li>Tuesday-Saturday: 9:00 AM - 6:00 PM</li>
+                            <li>Sunday: 10:00 AM - 4:00 PM</li>
+                            <li>Monday: Closed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 Lake Norman Dog Training. All Rights Reserved.</p>
+                </div>
+                <div class="legal-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Schema.org JSON-LD for Blog -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Lake Norman Dog Training Blog",
+        "description": "Expert dog training tips, behavior advice, and insights from the professional trainers at Lake Norman Dog Training.",
+        "url": "https://lakenormandogtraining.com/pages/blog.html",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Lake Norman Dog Training",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://lakenormandogtraining.com/images/Lake-norman-logo.png"
+            }
+        },
+        "blogPost": [
+            {
+                "@type": "BlogPosting",
+                "headline": "Understanding Leash Reactivity: Causes and Solutions",
+                "datePublished": "2025-08-01",
+                "author": {
+                    "@type": "Person",
+                    "name": "Sarah Thompson"
+                },
+                "url": "https://lakenormandogtraining.com/blog/understanding-leash-reactivity.html",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "https://lakenormandogtraining.com/blog/understanding-leash-reactivity.html"
+                }
+            },
+            {
+                "@type": "BlogPosting",
+                "headline": "The Critical Socialization Window: Making the Most of Your Puppy's First 16 Weeks",
+                "datePublished": "2025-07-25",
+                "author": {
+                    "@type": "Person",
+                    "name": "Jennifer Williams"
+                },
+                "url": "https://lakenormandogtraining.com/blog/puppy-socialization-window.html",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "https://lakenormandogtraining.com/blog/puppy-socialization-window.html"
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
+

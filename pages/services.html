@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Training Services | Lake Norman Dog Training</title>
+    <meta name="description" content="Comprehensive dog training services in Lake Norman including obedience training, puppy socialization, behavior modification, private lessons, and group classes.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/Lake-norman-logo.png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lakenormandogtraining.com/pages/services.html">
+    <meta property="og:title" content="Dog Training Services | Lake Norman Dog Training">
+    <meta property="og:description" content="Comprehensive dog training services in Lake Norman including obedience training, puppy socialization, behavior modification, private lessons, and group classes.">
+    <meta property="og:image" content="../images/Lake-norman-logo.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://lakenormandogtraining.com/pages/services.html">
+    <meta property="twitter:title" content="Dog Training Services | Lake Norman Dog Training">
+    <meta property="twitter:description" content="Comprehensive dog training services in Lake Norman including obedience training, puppy socialization, behavior modification, private lessons, and group classes.">
+    <meta property="twitter:image" content="../images/Lake-norman-logo.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://lakenormandogtraining.com/pages/services.html">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&family=Caveat&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <style>
+        /* Services Page Specific Styles */
+        .service-hero {
+            background-color: var(--secondary);
+            position: relative;
+        }
+        
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+            z-index: 1;
+        }
+        
+        .service-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: var(--spacing-xxl) 0;
+            color: white;
+        }
+        
+        .service-hero h1 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .service-hero p {
+            max-width: 800px;
+            margin: 0 auto var(--spacing-lg);
+            font-size: 1.2rem;
+        }
+        
+        .service-detail {
+            padding: var(--spacing-xl) 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .service-detail:last-child {
+            border-bottom: none;
+        }
+        
+        .service-detail-content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xl);
+        }
+        
+        @media (min-width: 992px) {
+            .service-detail-content {
+                flex-direction: row;
+                align-items: center;
+            }
+            
+            .service-detail-content.reverse {
+                flex-direction: row-reverse;
+            }
+        }
+        
+        .service-detail-text {
+            flex: 1;
+        }
+        
+        .service-detail-image {
+            flex: 1;
+        }
+        
+        .service-detail-image .image-placeholder {
+            height: 300px;
+            border-radius: var(--border-radius-lg);
+        }
+        
+        .service-features {
+            margin-top: var(--spacing-lg);
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+        }
+        
+        @media (min-width: 768px) {
+            .service-features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .service-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+        }
+        
+        .service-feature i {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-top: 0.2rem;
+        }
+        
+        .pricing-table {
+            margin-top: var(--spacing-lg);
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .pricing-table th {
+            background-color: var(--primary);
+            color: white;
+            text-align: left;
+            padding: var(--spacing-md);
+        }
+        
+        .pricing-table td {
+            padding: var(--spacing-md);
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .pricing-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .pricing-table tr:nth-child(even) {
+            background-color: var(--light-gray);
+        }
+        
+        .service-cta {
+            margin-top: var(--spacing-lg);
+            display: flex;
+            gap: var(--spacing-md);
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        @media (min-width: 768px) {
+            .service-cta {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+        
+        .faq-section {
+            margin-top: var(--spacing-xxl);
+        }
+        
+        .faq-item {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .faq-item h3 {
+            margin-bottom: var(--spacing-sm);
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../images/Lake-norman-logo.png" alt="Lake Norman Dog Training Logo">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <button class="mobile-menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+                        <span class="hamburger"></span>
+                    </button>
+                    <ul class="nav-list">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="services.html" class="active">Services</a></li>
+                        <li><a href="locations.html">Locations</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-cta">
+                    <a href="contact.html" class="btn btn-primary">Free Consultation</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Service Hero Section -->
+    <section class="service-hero">
+        <div class="container">
+            <div class="service-hero-content">
+                <h1>Dog Training Services in Lake Norman</h1>
+                <p>Comprehensive training solutions tailored to your dog's unique needs and your family's lifestyle</p>
+                <a href="contact.html" class="btn btn-primary btn-large">Schedule a Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Training Programs</h2>
+                <p>We offer a variety of training options to address every need, from basic obedience to complex behavioral issues</p>
+            </div>
+            
+            <!-- Basic Obedience Training -->
+            <div class="service-detail" id="basic-obedience">
+                <div class="service-detail-content">
+                    <div class="service-detail-text">
+                        <h3>Basic Obedience Training</h3>
+                        <p>Our Basic Obedience Training program is designed to teach your dog essential commands and proper manners, creating a well-behaved companion that responds reliably to your cues. This foundational training is perfect for dogs of all ages and breeds who need to learn or refresh their basic skills.</p>
+                        
+                        <p>Through positive reinforcement techniques, your dog will learn to:</p>
+                        
+                        <div class="service-features">
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Sit, Stay, and Come</strong>
+                                    <p>Master these essential commands with reliable response even with distractions</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Loose-Leash Walking</strong>
+                                    <p>Enjoy walks without pulling, making exercise pleasant for both of you</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Leave It & Drop It</strong>
+                                    <p>Prevent your dog from picking up harmful items and release objects on command</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Proper Greeting Behavior</strong>
+                                    <p>Teach your dog to greet people and other dogs calmly without jumping</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4>Program Options:</h4>
+                        <table class="pricing-table">
+                            <tr>
+                                <th>Program</th>
+                                <th>Duration</th>
+                                <th>Details</th>
+                            </tr>
+                            <tr>
+                                <td>Private Sessions</td>
+                                <td>4-6 weeks</td>
+                                <td>One-on-one training at your home or our facility</td>
+                            </tr>
+                            <tr>
+                                <td>Group Classes</td>
+                                <td>6 weeks</td>
+                                <td>Weekly classes with other dogs in a controlled environment</td>
+                            </tr>
+                            <tr>
+                                <td>Board & Train</td>
+                                <td>2 weeks</td>
+                                <td>Your dog stays with us for intensive daily training</td>
+                            </tr>
+                        </table>
+                        
+                        <div class="service-cta">
+                            <a href="services/basic-obedience.html" class="btn btn-primary">Learn More</a>
+                            <a href="contact.html" class="btn btn-secondary">Schedule a Consultation</a>
+                        </div>
+                    </div>
+                    <div class="service-detail-image">
+                        <div class="image-placeholder"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Puppy Training -->
+            <div class="service-detail" id="puppy-training">
+                <div class="service-detail-content reverse">
+                    <div class="service-detail-text">
+                        <h3>Puppy Training & Socialization</h3>
+                        <p>The early months of your puppy's life are crucial for developing good behavior patterns and social skills. Our Puppy Training program focuses on positive experiences and gentle guidance to help your puppy grow into a confident, well-mannered adult dog.</p>
+                        
+                        <p>Our puppy training program includes:</p>
+                        
+                        <div class="service-features">
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Basic Commands</strong>
+                                    <p>Age-appropriate training for sit, stay, come, and gentle leash walking</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Socialization</strong>
+                                    <p>Controlled exposure to different people, dogs, environments, and situations</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Potty Training</strong>
+                                    <p>Effective housebreaking techniques and crate training guidance</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Bite Inhibition</strong>
+                                    <p>Teaching your puppy appropriate play behavior and gentle mouth control</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4>Program Options:</h4>
+                        <table class="pricing-table">
+                            <tr>
+                                <th>Program</th>
+                                <th>Age Range</th>
+                                <th>Details</th>
+                            </tr>
+                            <tr>
+                                <td>Puppy Kindergarten</td>
+                                <td>8-16 weeks</td>
+                                <td>Focus on socialization, handling, and basic manners</td>
+                            </tr>
+                            <tr>
+                                <td>Puppy Basics</td>
+                                <td>16-24 weeks</td>
+                                <td>Building on early skills with more structured training</td>
+                            </tr>
+                            <tr>
+                                <td>Private Puppy Sessions</td>
+                                <td>Any age</td>
+                                <td>One-on-one training for specific puppy challenges</td>
+                            </tr>
+                        </table>
+                        
+                        <div class="service-cta">
+                            <a href="services/puppy-training.html" class="btn btn-primary">Learn More</a>
+                            <a href="contact.html" class="btn btn-secondary">Schedule a Consultation</a>
+                        </div>
+                    </div>
+                    <div class="service-detail-image">
+                        <div class="image-placeholder"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Behavior Modification -->
+            <div class="service-detail" id="behavior-modification">
+                <div class="service-detail-content">
+                    <div class="service-detail-text">
+                        <h3>Behavior Modification</h3>
+                        <p>If your dog is struggling with challenging behaviors like aggression, anxiety, or reactivity, our Behavior Modification program can help. We use science-based methods to address the root causes of problem behaviors and create lasting positive change.</p>
+                        
+                        <p>Our behavior specialists can help with:</p>
+                        
+                        <div class="service-features">
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Leash Reactivity</strong>
+                                    <p>Transform walks from stressful to enjoyable by reducing barking and lunging</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Separation Anxiety</strong>
+                                    <p>Help your dog feel secure when left alone and reduce destructive behaviors</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Fear & Anxiety</strong>
+                                    <p>Build confidence and coping skills for fearful or anxious dogs</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Aggression Management</strong>
+                                    <p>Address aggressive behaviors with safety protocols and behavior modification</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p>Behavior modification programs are highly personalized based on your dog's specific needs. We begin with a comprehensive assessment to understand the underlying causes of the behavior before creating a tailored training plan.</p>
+                        
+                        <div class="service-cta">
+                            <a href="services/behavior-modification.html" class="btn btn-primary">Learn More</a>
+                            <a href="contact.html" class="btn btn-secondary">Schedule a Consultation</a>
+                        </div>
+                    </div>
+                    <div class="service-detail-image">
+                        <div class="image-placeholder"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Private Training -->
+            <div class="service-detail" id="private-training">
+                <div class="service-detail-content reverse">
+                    <div class="service-detail-text">
+                        <h3>Private Training Sessions</h3>
+                        <p>Our one-on-one private training sessions offer personalized attention and customized training plans to address your specific goals and challenges. These sessions are ideal for dogs who need focused work on particular issues or for owners who prefer individual guidance.</p>
+                        
+                        <p>Benefits of private training include:</p>
+                        
+                        <div class="service-features">
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Personalized Attention</strong>
+                                    <p>Training tailored specifically to your dog's needs and learning style</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Flexible Scheduling</strong>
+                                    <p>Sessions arranged at times that work for your busy lifestyle</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Real-World Practice</strong>
+                                    <p>Training in your home environment where behaviors actually occur</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Owner Coaching</strong>
+                                    <p>Hands-on guidance to improve your handling and communication skills</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4>Private Training Options:</h4>
+                        <table class="pricing-table">
+                            <tr>
+                                <th>Package</th>
+                                <th>Sessions</th>
+                                <th>Best For</th>
+                            </tr>
+                            <tr>
+                                <td>Single Session</td>
+                                <td>1 hour</td>
+                                <td>Addressing a specific issue or training question</td>
+                            </tr>
+                            <tr>
+                                <td>Basic Package</td>
+                                <td>4 sessions</td>
+                                <td>Building fundamental skills and addressing minor issues</td>
+                            </tr>
+                            <tr>
+                                <td>Comprehensive Package</td>
+                                <td>8 sessions</td>
+                                <td>Complete training program for multiple skills or behaviors</td>
+                            </tr>
+                        </table>
+                        
+                        <div class="service-cta">
+                            <a href="services/private-training.html" class="btn btn-primary">Learn More</a>
+                            <a href="contact.html" class="btn btn-secondary">Schedule a Consultation</a>
+                        </div>
+                    </div>
+                    <div class="service-detail-image">
+                        <div class="image-placeholder"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Group Classes -->
+            <div class="service-detail" id="group-classes">
+                <div class="service-detail-content">
+                    <div class="service-detail-text">
+                        <h3>Group Training Classes</h3>
+                        <p>Our group classes offer a structured, social environment for dogs to learn while practicing skills around other dogs and people. With small class sizes (maximum 6 dogs), we ensure each dog-owner team receives plenty of individual attention while benefiting from the group dynamic.</p>
+                        
+                        <p>Benefits of group training include:</p>
+                        
+                        <div class="service-features">
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Social Learning</strong>
+                                    <p>Dogs learn from watching other dogs and practice focusing despite distractions</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Structured Progression</strong>
+                                    <p>Weekly classes build skills systematically with homework between sessions</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Community Support</strong>
+                                    <p>Connect with other dog owners facing similar challenges</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Cost-Effective</strong>
+                                    <p>More affordable than private training while still providing quality instruction</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4>Current Group Class Schedule:</h4>
+                        <table class="pricing-table">
+                            <tr>
+                                <th>Class</th>
+                                <th>Day/Time</th>
+                                <th>Duration</th>
+                            </tr>
+                            <tr>
+                                <td>Puppy Socialization</td>
+                                <td>Saturdays, 10:00 AM</td>
+                                <td>6 weeks</td>
+                            </tr>
+                            <tr>
+                                <td>Basic Obedience</td>
+                                <td>Tuesdays, 6:00 PM</td>
+                                <td>6 weeks</td>
+                            </tr>
+                            <tr>
+                                <td>Advanced Obedience</td>
+                                <td>Thursdays, 6:00 PM</td>
+                                <td>6 weeks</td>
+                            </tr>
+                            <tr>
+                                <td>Leash Reactivity</td>
+                                <td>Sundays, 2:00 PM</td>
+                                <td>8 weeks</td>
+                            </tr>
+                        </table>
+                        
+                        <div class="service-cta">
+                            <a href="services/group-classes.html" class="btn btn-primary">Learn More</a>
+                            <a href="contact.html" class="btn btn-secondary">Schedule a Consultation</a>
+                        </div>
+                    </div>
+                    <div class="service-detail-image">
+                        <div class="image-placeholder"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Service Dog Training -->
+            <div class="service-detail" id="service-dog-training">
+                <div class="service-detail-content reverse">
+                    <div class="service-detail-text">
+                        <h3>Service Dog Preparation Training</h3>
+                        <p>While we don't certify service dogs, we offer specialized training to help prepare dogs for potential service work. This program focuses on building the solid foundation of obedience, focus, and public access skills that service dogs need before specialized task training.</p>
+                        
+                        <p>Our service dog preparation program includes:</p>
+                        
+                        <div class="service-features">
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Advanced Obedience</strong>
+                                    <p>Rock-solid response to commands even with significant distractions</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Public Access Skills</strong>
+                                    <p>Appropriate behavior in stores, restaurants, and other public settings</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Temperament Assessment</strong>
+                                    <p>Evaluation of your dog's suitability for service work</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Handler Training</strong>
+                                    <p>Guidance on legal rights, responsibilities, and handling techniques</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p>This program requires a significant commitment of time and practice. We'll work closely with you to determine if your dog is a good candidate for service work and provide honest feedback throughout the training process.</p>
+                        
+                        <div class="service-cta">
+                            <a href="services/service-dog-training.html" class="btn btn-primary">Learn More</a>
+                            <a href="contact.html" class="btn btn-secondary">Schedule a Consultation</a>
+                        </div>
+                    </div>
+                    <div class="service-detail-image">
+                        <div class="image-placeholder"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about our dog training services</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3>How do I know which training program is right for my dog?</h3>
+                    <p>We recommend starting with a free consultation where we can assess your dog's needs, discuss your goals, and recommend the most appropriate program. Every dog is unique, and we'll help you choose the option that best addresses your specific situation.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>How long does it take to see results?</h3>
+                    <p>Many clients see initial improvements within the first few sessions, but lasting behavior change typically takes 4-8 weeks of consistent practice. The timeline depends on the specific behavior, your dog's temperament, and your commitment to practicing between sessions. Complex behavioral issues may require longer-term training.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do you use treats in training?</h3>
+                    <p>Yes, we use positive reinforcement methods that include treats, praise, play, and other rewards. Treats are especially helpful in the early stages of training to establish behaviors. As training progresses, we gradually reduce the frequency of treats while maintaining the desired behaviors.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Is my dog too old to train?</h3>
+                    <p>No! The saying "you can't teach an old dog new tricks" is a myth. Dogs of any age can learn new behaviors and modify existing ones. While puppies may learn some things more quickly, adult and senior dogs often have longer attention spans and can make excellent students.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What training equipment do you use?</h3>
+                    <p>We primarily use flat collars, harnesses, and 6-foot leashes for most training. We do not use or recommend shock collars, prong collars, or other aversive tools. We'll help you select the most appropriate equipment for your specific dog and training goals.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do you offer any guarantees?</h3>
+                    <p>While we can't guarantee specific results since they depend on many factors including owner follow-through, we do guarantee our commitment to you and your dog. If you're not seeing progress, we'll adjust our approach or recommend alternative solutions to help you reach your goals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Training?</h2>
+                <p>Schedule a free consultation to discuss your dog's needs and create a personalized training plan.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary btn-large">Schedule Consultation</a>
+                    <a href="tel:9876543" class="btn btn-secondary btn-large">Call Us: 987-6543</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../images/Lake-norman-logo.png" alt="Lake Norman Dog Training Logo">
+                    <p>Your Pack is Our Passion</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="locations.html">Locations</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="testimonials.html">Testimonials</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="services/basic-obedience.html">Basic Obedience</a></li>
+                            <li><a href="services/puppy-training.html">Puppy Training</a></li>
+                            <li><a href="services/behavior-modification.html">Behavior Modification</a></li>
+                            <li><a href="services/private-training.html">Private Training</a></li>
+                            <li><a href="services/group-classes.html">Group Classes</a></li>
+                            <li><a href="services/service-dog-training.html">Service Dog Preparation</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Service Areas</h3>
+                        <ul>
+                            <li><a href="locations/mooresville.html">Mooresville</a></li>
+                            <li><a href="locations/cornelius.html">Cornelius</a></li>
+                            <li><a href="locations/davidson.html">Davidson</a></li>
+                            <li><a href="locations/huntersville.html">Huntersville</a></li>
+                            <li><a href="locations/denver.html">Denver</a></li>
+                            <li><a href="locations.html">View All Locations</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Contact Us</h3>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-phone"></i> <a href="tel:9876543">987-6543</a></li>
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:info@lakenormandogtraining.com">info@lakenormandogtraining.com</a></li>
+                            <li><i class="fas fa-map-marker-alt"></i> Lake Norman, NC</li>
+                        </ul>
+                        <h3>Hours</h3>
+                        <ul class="hours-info">
+                            <li>Tuesday-Saturday: 9:00 AM - 6:00 PM</li>
+                            <li>Sunday: 10:00 AM - 4:00 PM</li>
+                            <li>Monday: Closed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 Lake Norman Dog Training. All Rights Reserved.</p>
+                </div>
+                <div class="legal-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Schema.org JSON-LD for Service -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Dog Training",
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Lake Norman Dog Training",
+            "image": "https://lakenormandogtraining.com/images/Lake-norman-logo.png",
+            "url": "https://lakenormandogtraining.com",
+            "telephone": "9876543",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Lake Norman",
+                "addressRegion": "NC",
+                "addressCountry": "US"
+            }
+        },
+        "areaServed": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": "35.4816",
+                "longitude": "-80.8884"
+            },
+            "geoRadius": "32000"
+        },
+        "offers": {
+            "@type": "Offer",
+            "description": "Dog training services including obedience training, puppy socialization, behavior modification, and more",
+            "url": "https://lakenormandogtraining.com/pages/services.html"
+        }
+    }
+    </script>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
+

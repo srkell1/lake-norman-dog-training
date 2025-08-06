@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Lake Norman Dog Training | Schedule a Consultation</title>
+    <meta name="description" content="Get in touch with Lake Norman Dog Training to schedule a consultation or ask questions. Serving the entire Lake Norman area including Mooresville, Cornelius, and Davidson.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/Lake-norman-logo.png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lakenormandogtraining.com/pages/contact.html">
+    <meta property="og:title" content="Contact Lake Norman Dog Training">
+    <meta property="og:description" content="Get in touch with Lake Norman Dog Training to schedule a consultation or ask questions.">
+    <meta property="og:image" content="../images/Lake-norman-logo.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://lakenormandogtraining.com/pages/contact.html">
+    <meta property="twitter:title" content="Contact Lake Norman Dog Training">
+    <meta property="twitter:description" content="Get in touch with Lake Norman Dog Training to schedule a consultation or ask questions.">
+    <meta property="twitter:image" content="../images/Lake-norman-logo.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&family=Caveat&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <style>
+        /* Contact Page Specific Styles */
+        .contact-section {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xl);
+        }
+        
+        @media (min-width: 992px) {
+            .contact-section {
+                flex-direction: row;
+            }
+        }
+        
+        .contact-info-container {
+            flex: 1;
+        }
+        
+        .contact-form-container {
+            flex: 2;
+        }
+        
+        .contact-info-card {
+            background-color: white;
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .contact-info-card h3 {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            color: var(--primary);
+        }
+        
+        .contact-info-card h3 i {
+            color: var(--secondary);
+        }
+        
+        .contact-form {
+            background-color: white;
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .form-group {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: var(--spacing-sm);
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: var(--spacing-md);
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius-md);
+            font-family: var(--body-font);
+            font-size: 1rem;
+            transition: border-color var(--transition-fast);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-message {
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-md);
+            border-radius: var(--border-radius-md);
+            display: none;
+        }
+        
+        .form-message.error {
+            background-color: #ffebee;
+            color: #c62828;
+            display: block;
+        }
+        
+        .form-message.success {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            display: block;
+        }
+        
+        .map-container {
+            height: 400px;
+            margin-top: var(--spacing-xl);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+        }
+        
+        .map-placeholder {
+            height: 100%;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../images/Lake-norman-logo.png" alt="Lake Norman Dog Training Logo">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                        <span class="hamburger"></span>
+                    </button>
+                    <ul class="nav-list">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="locations.html">Locations</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-cta">
+                    <a href="contact.html" class="btn btn-primary">Free Consultation</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Contact Us</h1>
+                <p>Get in touch to discuss your dog training needs</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>We're here to answer your questions and help you get started with training</p>
+            </div>
+            
+            <div class="contact-section">
+                <div class="contact-info-container">
+                    <div class="contact-info-card">
+                        <h3><i class="fas fa-phone"></i> Phone</h3>
+                        <p>Call us to schedule a consultation or ask questions:</p>
+                        <p><a href="tel:9876543">987-6543</a></p>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <h3><i class="fas fa-envelope"></i> Email</h3>
+                        <p>Send us an email and we'll get back to you within 24 hours:</p>
+                        <p><a href="mailto:info@lakenormandogtraining.com">info@lakenormandogtraining.com</a></p>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <h3><i class="fas fa-clock"></i> Hours</h3>
+                        <p>Tuesday-Saturday: 9:00 AM - 6:00 PM</p>
+                        <p>Sunday: 10:00 AM - 4:00 PM</p>
+                        <p>Monday: Closed (Administrative Day)</p>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <h3><i class="fas fa-map-marker-alt"></i> Service Area</h3>
+                        <p>We proudly serve the entire Lake Norman region including:</p>
+                        <ul class="areas-list">
+                            <li>Mooresville</li>
+                            <li>Cornelius</li>
+                            <li>Davidson</li>
+                            <li>Huntersville</li>
+                            <li>Denver</li>
+                            <li>And surrounding areas within 20 miles</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" name="service" class="form-control">
+                                <option value="">-- Select a Service --</option>
+                                <option value="Basic Obedience">Basic Obedience Training</option>
+                                <option value="Puppy Training">Puppy Training</option>
+                                <option value="Behavior Modification">Behavior Modification</option>
+                                <option value="Private Training">Private Training</option>
+                                <option value="Group Classes">Group Classes</option>
+                                <option value="Service Dog">Service Dog Preparation</option>
+                                <option value="Other">Other (Please specify)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                        
+                        <div class="form-message"></div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Map Section -->
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <p><i class="fas fa-map-marked-alt"></i> Interactive Map of Lake Norman Service Area</p>
+                </div>
+            </div>
+            
+            <!-- FAQ Section -->
+            <div class="section-header" style="margin-top: var(--spacing-xxl);">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about contacting and scheduling with us</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3>How do I schedule a consultation?</h3>
+                    <p>You can schedule a consultation by filling out the contact form above, calling us directly at 987-6543, or sending an email to info@lakenormandogtraining.com. We'll get back to you within 24 hours to set up a time that works for you.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Is there a fee for the initial consultation?</h3>
+                    <p>No, we offer a free initial consultation to discuss your dog's needs and determine the best training approach. This can be done over the phone or in person, depending on your preference.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>How far in advance should I book training sessions?</h3>
+                    <p>We recommend booking at least 1-2 weeks in advance for private sessions and 2-3 weeks for group classes, as our schedule tends to fill up quickly, especially during peak seasons.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do you offer virtual consultations?</h3>
+                    <p>Yes, we offer virtual consultations via Zoom or FaceTime for clients who prefer this option or live just outside our service area. This can be a great way to get started before in-person training.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Dog's Behavior?</h2>
+                <p>Schedule a free consultation to discuss your training needs and goals.</p>
+                <div class="cta-buttons">
+                    <a href="#contactForm" class="btn btn-primary btn-large">Schedule Consultation</a>
+                    <a href="tel:9876543" class="btn btn-secondary btn-large">Call Us: 987-6543</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../images/Lake-norman-logo.png" alt="Lake Norman Dog Training Logo">
+                    <p>Your Pack is Our Passion</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="locations.html">Locations</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="testimonials.html">Testimonials</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="services/basic-obedience.html">Basic Obedience</a></li>
+                            <li><a href="services/puppy-training.html">Puppy Training</a></li>
+                            <li><a href="services/behavior-modification.html">Behavior Modification</a></li>
+                            <li><a href="services/private-training.html">Private Training</a></li>
+                            <li><a href="services/group-classes.html">Group Classes</a></li>
+                            <li><a href="services/service-dog-training.html">Service Dog Preparation</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Service Areas</h3>
+                        <ul>
+                            <li><a href="locations/mooresville.html">Mooresville</a></li>
+                            <li><a href="locations/cornelius.html">Cornelius</a></li>
+                            <li><a href="locations/davidson.html">Davidson</a></li>
+                            <li><a href="locations/huntersville.html">Huntersville</a></li>
+                            <li><a href="locations/denver.html">Denver</a></li>
+                            <li><a href="locations.html">View All Locations</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Contact Us</h3>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-phone"></i> <a href="tel:9876543">987-6543</a></li>
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:info@lakenormandogtraining.com">info@lakenormandogtraining.com</a></li>
+                            <li><i class="fas fa-map-marker-alt"></i> Lake Norman, NC</li>
+                        </ul>
+                        <h3>Hours</h3>
+                        <ul class="hours-info">
+                            <li>Tuesday-Saturday: 9:00 AM - 6:00 PM</li>
+                            <li>Sunday: 10:00 AM - 4:00 PM</li>
+                            <li>Monday: Closed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 Lake Norman Dog Training. All Rights Reserved.</p>
+                </div>
+                <div class="legal-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Schema.org JSON-LD for LocalBusiness -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Lake Norman Dog Training",
+        "image": "https://lakenormandogtraining.com/images/Lake-norman-logo.png",
+        "url": "https://lakenormandogtraining.com",
+        "telephone": "9876543",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lake Norman",
+            "addressRegion": "NC",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "35.4816",
+            "longitude": "-80.8884"
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "09:00",
+                "closes": "18:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Sunday",
+                "opens": "10:00",
+                "closes": "16:00"
+            }
+        ],
+        "sameAs": [
+            "https://www.facebook.com/lakenormandogtraining",
+            "https://www.instagram.com/lakenormandogtraining"
+        ]
+    }
+    </script>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script>
+        // Contact Form Handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    
+                    // Get form data
+                    const formData = new FormData(contactForm);
+                    const formObject = Object.fromEntries(formData.entries());
+                    
+                    // Validate form
+                    let isValid = true;
+                    let errorMessage = '';
+                    
+                    if (!formObject.name || formObject.name.trim() === '') {
+                        isValid = false;
+                        errorMessage = 'Please enter your name.';
+                    } else if (!formObject.email || !isValidEmail(formObject.email)) {
+                        isValid = false;
+                        errorMessage = 'Please enter a valid email address.';
+                    } else if (!formObject.message || formObject.message.trim() === '') {
+                        isValid = false;
+                        errorMessage = 'Please enter a message.';
+                    }
+                    
+                    // Show error or success message
+                    const messageElement = contactForm.querySelector('.form-message');
+                    
+                    if (!isValid) {
+                        messageElement.textContent = errorMessage;
+                        messageElement.className = 'form-message error';
+                    } else {
+                        // In a real implementation, this would send data to a server
+                        messageElement.textContent = 'Thank you for your message! We will get back to you soon.';
+                        messageElement.className = 'form-message success';
+                        
+                        // Reset form
+                        contactForm.reset();
+                        
+                        // Hide success message after 5 seconds
+                        setTimeout(() => {
+                            messageElement.textContent = '';
+                            messageElement.className = 'form-message';
+                        }, 5000);
+                    }
+                });
+            }
+            
+            // Validate Email Format
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+        });
+    </script>
+</body>
+</html>
+

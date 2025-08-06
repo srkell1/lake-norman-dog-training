@@ -1,0 +1,8 @@
+# robots.txt for lakenormandogtraining.com
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://lakenormandogtraining.com/sitemap.xml
+

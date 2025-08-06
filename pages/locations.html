@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Areas | Lake Norman Dog Training</title>
+    <meta name="description" content="Lake Norman Dog Training serves Mooresville, Cornelius, Davidson, Huntersville, Denver, and surrounding areas within 20 miles of Lake Norman, NC.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/Lake-norman-logo.png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lakenormandogtraining.com/pages/locations.html">
+    <meta property="og:title" content="Service Areas | Lake Norman Dog Training">
+    <meta property="og:description" content="Lake Norman Dog Training serves Mooresville, Cornelius, Davidson, Huntersville, Denver, and surrounding areas within 20 miles of Lake Norman, NC.">
+    <meta property="og:image" content="../images/Lake-norman-logo.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://lakenormandogtraining.com/pages/locations.html">
+    <meta property="twitter:title" content="Service Areas | Lake Norman Dog Training">
+    <meta property="twitter:description" content="Lake Norman Dog Training serves Mooresville, Cornelius, Davidson, Huntersville, Denver, and surrounding areas within 20 miles of Lake Norman, NC.">
+    <meta property="twitter:image" content="../images/Lake-norman-logo.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://lakenormandogtraining.com/pages/locations.html">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&family=Caveat&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <style>
+        /* Locations Page Specific Styles */
+        .locations-hero {
+            background-color: var(--secondary);
+            position: relative;
+        }
+        
+        .locations-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+            z-index: 1;
+        }
+        
+        .locations-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: var(--spacing-xxl) 0;
+            color: white;
+        }
+        
+        .locations-hero h1 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .locations-hero p {
+            max-width: 800px;
+            margin: 0 auto var(--spacing-lg);
+            font-size: 1.2rem;
+        }
+        
+        .map-container {
+            height: 500px;
+            margin-bottom: var(--spacing-xl);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .map-placeholder {
+            height: 100%;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-size: 1.2rem;
+        }
+        
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-xl);
+        }
+        
+        @media (min-width: 768px) {
+            .location-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .location-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .location-card {
+            background-color: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform var(--transition-medium);
+        }
+        
+        .location-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .location-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .location-content {
+            padding: var(--spacing-lg);
+        }
+        
+        .location-content h3 {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .location-features {
+            margin-top: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .location-feature {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .location-feature i {
+            color: var(--secondary);
+        }
+        
+        .training-locations {
+            margin-top: var(--spacing-xxl);
+        }
+        
+        .training-location {
+            background-color: white;
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .training-location-content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+        
+        @media (min-width: 992px) {
+            .training-location-content {
+                flex-direction: row;
+            }
+        }
+        
+        .training-location-text {
+            flex: 1;
+        }
+        
+        .training-location-image {
+            flex: 1;
+        }
+        
+        .training-location-image .image-placeholder {
+            height: 300px;
+            border-radius: var(--border-radius-md);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../images/Lake-norman-logo.png" alt="Lake Norman Dog Training Logo">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <button class="mobile-menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+                        <span class="hamburger"></span>
+                    </button>
+                    <ul class="nav-list">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="locations.html" class="active">Locations</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-cta">
+                    <a href="contact.html" class="btn btn-primary">Free Consultation</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Locations Hero Section -->
+    <section class="locations-hero">
+        <div class="container">
+            <div class="locations-hero-content">
+                <h1>Dog Training Throughout Lake Norman</h1>
+                <p>Serving all communities within 20 miles of Lake Norman with professional dog training services</p>
+                <a href="contact.html" class="btn btn-primary btn-large">Schedule a Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area Map -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Service Area</h2>
+                <p>Lake Norman Dog Training proudly serves the entire Lake Norman region and surrounding communities</p>
+            </div>
+            
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <p><i class="fas fa-map-marked-alt"></i> Interactive Map of Lake Norman Service Area</p>
+                </div>
+            </div>
+            
+            <p>Lake Norman Dog Training provides professional dog training services within a 20-mile radius of Lake Norman, covering all the major communities in the area. Whether you're in a lakefront property or a neighborhood further inland, we're here to help with all your dog training needs.</p>
+            
+            <p>We offer both in-home training sessions where we come to you, as well as training at our partner facilities throughout the region. Our flexible scheduling and multiple locations ensure that quality dog training is accessible to everyone in the Lake Norman area.</p>
+        </div>
+    </section>
+
+    <!-- Communities We Serve -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Communities We Serve</h2>
+                <p>Discover our dog training services in your specific area</p>
+            </div>
+            
+            <div class="location-grid">
+                <!-- Mooresville -->
+                <div class="location-card">
+                    <div class="location-image">
+                        <div class="image-placeholder"></div>
+                    </div>
+                    <div class="location-content">
+                        <h3>Mooresville</h3>
+                        <p>Known as "Race City USA," Mooresville offers beautiful neighborhoods and lakefront properties perfect for active dogs.</p>
+                        
+                        <div class="location-features">
+                            <div class="location-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>In-home training available</span>
+                            </div>
+                            <div class="location-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Group classes at Liberty Park</span>
+                            </div>
+                            <div class="location-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Puppy socialization sessions</span>
+                            </div>
+                        </div>
+                        
+                        <a href="locations/mooresville.html" class="btn btn-text">Learn more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Cornelius -->
+                <div class="location-card">
+                    <div class="location-image">
+                        <div class="image-placeholder"></div>
+                    </div>
+                    <div class="location-content">
+                        <h3>Cornelius</h3>
+                        <p>A beautiful lakeside town with numerous parks and trails, making it ideal for dog training in natural settings.</p>
+                        
+                        <div class="location-features">
+                            <div class="location-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>In-home training available</span>
+                            </div>
+                            <div class="location-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Group classes at Bailey Road Park</span>
+                            </div>
+                            <div class="location-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Specialized boat training for lake dogs</span>
+                            </div>
+                        </div>
+                        
+                        <a href="locations/cornelius.html" class="btn btn-text">Learn more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Davidson -->
+                <div class="location-card">
+                    <div class="location-image">
+                        <div class="image-placeholder"></div>
+                    </div>
+                    <div class="location-content">
+                        <h3>Davidson</h3>
+                        <p>A charming college town with walkable neighborhoods and dog-friendly community spaces.</p>
+                        
+                        <div class="location-features">
+                            <div class="location-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>In-home training available</span>
+                            </div>
+                            <div class="location-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Group classes at Roosevelt Wilson Park</span>
+                            </div>
+                            <div class="location-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Urban environment training</span>
+                            </div>
+                        </div>
+                        
+                        <a href="locations/davidson.html" class="btn btn-text">Learn more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Huntersville -->
+                <div class="location-card">
+                    <div class="location-image">
+                        <div class="image-placeholder"></div>
+                    </div>
+                    <div class="location-content">
+                        <h3>Huntersville</h3>
+                        <p>A growing community with numerous parks and recreational areas perfect for dog training.</p>
+                        
+                        <div class="location-features">
+                            <div class="location-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>In-home training available</span>
+                            </div>
+                            <div class="location-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Group classes at North Mecklenburg Park</span>
+                            </div>
+                            <div class="location-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Specialized training for rural properties</span>
+                            </div>
+                        </div>
+                        
+                        <a href="locations/huntersville.html" class="btn btn-text">Learn more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Denver -->
+                <div class="location-card">
+                    <div class="location-image">
+                        <div class="image-placeholder"></div>
+                    </div>
+                    <div class="location-content">
+                        <h3>Denver</h3>
+                        <p>Located on the western shore of Lake Norman with spacious properties and natural training environments.</p>
+                        
+                        <div class="location-features">
+                            <div class="location-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>In-home training available</span>
+                            </div>
+                            <div class="location-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Group classes at East Lincoln Park</span>
+                            </div>
+                            <div class="location-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Off-leash training in rural settings</span>
+                            </div>
+                        </div>
+                        
+                        <a href="locations/denver.html" class="btn btn-text">Learn more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Other Areas -->
+                <div class="location-card">
+                    <div class="location-image">
+                        <div class="image-placeholder"></div>
+                    </div>
+                    <div class="location-content">
+                        <h3>Additional Service Areas</h3>
+                        <p>We also serve many other communities within 20 miles of Lake Norman.</p>
+                        
+                        <div class="location-features">
+                            <div class="location-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Troutman</span>
+                            </div>
+                            <div class="location-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Sherrills Ford</span>
+                            </div>
+                            <div class="location-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Mount Mourne</span>
+                            </div>
+                            <div class="location-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Westport</span>
+                            </div>
+                            <div class="location-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>And more!</span>
+                            </div>
+                        </div>
+                        
+                        <a href="contact.html" class="btn btn-text">Contact us to confirm service in your area <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Locations -->
+    <section class="section training-locations">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Training Facilities</h2>
+                <p>In addition to in-home training, we offer sessions at these partner locations</p>
+            </div>
+            
+            <!-- Main Training Center -->
+            <div class="training-location">
+                <div class="training-location-content">
+                    <div class="training-location-text">
+                        <h3>Lake Norman Dog Training Center</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Mooresville, NC</p>
+                        
+                        <p>Our main training facility offers both indoor and outdoor training areas, allowing for year-round training regardless of weather conditions. The center features:</p>
+                        
+                        <ul>
+                            <li>Climate-controlled indoor training area</li>
+                            <li>Fenced outdoor training yard</li>
+                            <li>Agility equipment for confidence building</li>
+                            <li>Specialized training props and obstacles</li>
+                            <li>Comfortable waiting area for clients</li>
+                        </ul>
+                        
+                        <p>This location hosts our group classes, puppy socialization sessions, and is available for private training appointments.</p>
+                        
+                        <a href="contact.html" class="btn btn-primary">Schedule Training at This Location</a>
+                    </div>
+                    <div class="training-location-image">
+                        <div class="image-placeholder"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Partner Location 1 -->
+            <div class="training-location">
+                <div class="training-location-content reverse">
+                    <div class="training-location-text">
+                        <h3>Lakeside Pet Resort</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Cornelius, NC</p>
+                        
+                        <p>Our partnership with Lakeside Pet Resort allows us to offer training in conjunction with boarding services. This is ideal for:</p>
+                        
+                        <ul>
+                            <li>Board and train programs</li>
+                            <li>Training while you're on vacation</li>
+                            <li>Day training while you're at work</li>
+                            <li>Specialized water and boat training (seasonal)</li>
+                        </ul>
+                        
+                        <p>The resort's lakefront location provides a unique opportunity for dogs to practice skills in a water environment, perfect for families with boats who want their dogs to be comfortable and safe on the water.</p>
+                        
+                        <a href="contact.html" class="btn btn-primary">Schedule Training at This Location</a>
+                    </div>
+                    <div class="training-location-image">
+                        <div class="image-placeholder"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Partner Location 2 -->
+            <div class="training-location">
+                <div class="training-location-content">
+                    <div class="training-location-text">
+                        <h3>Community Parks</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Various Locations</p>
+                        
+                        <p>We conduct training sessions at several community parks throughout the Lake Norman area. These real-world environments are excellent for:</p>
+                        
+                        <ul>
+                            <li>Practicing skills with real-life distractions</li>
+                            <li>Leash training in public settings</li>
+                            <li>Socialization with controlled exposure to other people and dogs</li>
+                            <li>Building confidence in various environments</li>
+                        </ul>
+                        
+                        <p>Park locations include Bailey Road Park (Cornelius), Roosevelt Wilson Park (Davidson), Liberty Park (Mooresville), and North Mecklenburg Park (Huntersville).</p>
+                        
+                        <a href="contact.html" class="btn btn-primary">Schedule Training at These Locations</a>
+                    </div>
+                    <div class="training-location-image">
+                        <div class="image-placeholder"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Not in Our Service Area -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Not in Our Service Area?</h2>
+                <p>Options for dog owners outside our 20-mile radius</p>
+            </div>
+            
+            <div class="service-detail-content">
+                <div class="service-detail-text">
+                    <p>If you're located outside our primary service area, we still have options to help you with your dog training needs:</p>
+                    
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Board & Train Programs</strong>
+                                <p>Your dog stays at our facility for intensive training, and we provide detailed handover sessions when you pick up your dog.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Virtual Consultations</strong>
+                                <p>We offer video consultations to provide guidance and training plans you can implement at home.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Extended Travel Fee</strong>
+                                <p>For locations just beyond our standard service area, we may be able to accommodate with an additional travel fee.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Referral Network</strong>
+                                <p>We maintain relationships with qualified trainers throughout North Carolina and can provide referrals to trusted colleagues in your area.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p>Contact us to discuss your location and needs, and we'll help find the best solution for you and your dog.</p>
+                    
+                    <a href="contact.html" class="btn btn-primary">Contact Us About Your Location</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Training in Your Area?</h2>
+                <p>Schedule a free consultation to discuss your dog's needs and create a personalized training plan.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary btn-large">Schedule Consultation</a>
+                    <a href="tel:9876543" class="btn btn-secondary btn-large">Call Us: 987-6543</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../images/Lake-norman-logo.png" alt="Lake Norman Dog Training Logo">
+                    <p>Your Pack is Our Passion</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="locations.html">Locations</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="testimonials.html">Testimonials</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="services/basic-obedience.html">Basic Obedience</a></li>
+                            <li><a href="services/puppy-training.html">Puppy Training</a></li>
+                            <li><a href="services/behavior-modification.html">Behavior Modification</a></li>
+                            <li><a href="services/private-training.html">Private Training</a></li>
+                            <li><a href="services/group-classes.html">Group Classes</a></li>
+                            <li><a href="services/service-dog-training.html">Service Dog Preparation</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Service Areas</h3>
+                        <ul>
+                            <li><a href="locations/mooresville.html">Mooresville</a></li>
+                            <li><a href="locations/cornelius.html">Cornelius</a></li>
+                            <li><a href="locations/davidson.html">Davidson</a></li>
+                            <li><a href="locations/huntersville.html">Huntersville</a></li>
+                            <li><a href="locations/denver.html">Denver</a></li>
+                            <li><a href="locations.html">View All Locations</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Contact Us</h3>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-phone"></i> <a href="tel:9876543">987-6543</a></li>
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:info@lakenormandogtraining.com">info@lakenormandogtraining.com</a></li>
+                            <li><i class="fas fa-map-marker-alt"></i> Lake Norman, NC</li>
+                        </ul>
+                        <h3>Hours</h3>
+                        <ul class="hours-info">
+                            <li>Tuesday-Saturday: 9:00 AM - 6:00 PM</li>
+                            <li>Sunday: 10:00 AM - 4:00 PM</li>
+                            <li>Monday: Closed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 Lake Norman Dog Training. All Rights Reserved.</p>
+                </div>
+                <div class="legal-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Schema.org JSON-LD for LocalBusiness with Service Areas -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Lake Norman Dog Training",
+        "image": "https://lakenormandogtraining.com/images/Lake-norman-logo.png",
+        "url": "https://lakenormandogtraining.com",
+        "telephone": "9876543",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lake Norman",
+            "addressRegion": "NC",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "35.4816",
+            "longitude": "-80.8884"
+        },
+        "areaServed": [
+            {
+                "@type": "City",
+                "name": "Mooresville",
+                "sameAs": "https://en.wikipedia.org/wiki/Mooresville,_North_Carolina"
+            },
+            {
+                "@type": "City",
+                "name": "Cornelius",
+                "sameAs": "https://en.wikipedia.org/wiki/Cornelius,_North_Carolina"
+            },
+            {
+                "@type": "City",
+                "name": "Davidson",
+                "sameAs": "https://en.wikipedia.org/wiki/Davidson,_North_Carolina"
+            },
+            {
+                "@type": "City",
+                "name": "Huntersville",
+                "sameAs": "https://en.wikipedia.org/wiki/Huntersville,_North_Carolina"
+            },
+            {
+                "@type": "City",
+                "name": "Denver",
+                "sameAs": "https://en.wikipedia.org/wiki/Denver,_North_Carolina"
+            }
+        ],
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "09:00",
+                "closes": "18:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Sunday",
+                "opens": "10:00",
+                "closes": "16:00"
+            }
+        ],
+        "sameAs": [
+            "https://www.facebook.com/lakenormandogtraining",
+            "https://www.instagram.com/lakenormandogtraining"
+        ]
+    }
+    </script>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
+

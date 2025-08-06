@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Testimonials | Lake Norman Dog Training</title>
+    <meta name="description" content="Read real success stories and reviews from Lake Norman Dog Training clients. Our positive reinforcement methods have helped hundreds of dogs and their owners.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/Lake-norman-logo.png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lakenormandogtraining.com/pages/testimonials.html">
+    <meta property="og:title" content="Client Testimonials | Lake Norman Dog Training">
+    <meta property="og:description" content="Read real success stories and reviews from Lake Norman Dog Training clients. Our positive reinforcement methods have helped hundreds of dogs and their owners.">
+    <meta property="og:image" content="../images/Lake-norman-logo.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://lakenormandogtraining.com/pages/testimonials.html">
+    <meta property="twitter:title" content="Client Testimonials | Lake Norman Dog Training">
+    <meta property="twitter:description" content="Read real success stories and reviews from Lake Norman Dog Training clients. Our positive reinforcement methods have helped hundreds of dogs and their owners.">
+    <meta property="twitter:image" content="../images/Lake-norman-logo.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://lakenormandogtraining.com/pages/testimonials.html">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&family=Caveat&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <style>
+        /* Testimonials Page Specific Styles */
+        .testimonials-hero {
+            background-color: var(--secondary);
+            position: relative;
+        }
+        
+        .testimonials-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+            z-index: 1;
+        }
+        
+        .testimonials-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: var(--spacing-xxl) 0;
+            color: white;
+        }
+        
+        .testimonials-hero h1 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .testimonials-hero p {
+            max-width: 800px;
+            margin: 0 auto var(--spacing-lg);
+            font-size: 1.2rem;
+        }
+        
+        .testimonial-stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .stat-item {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-lg);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-xs);
+            color: var(--accent);
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+        }
+        
+        .testimonial-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+            justify-content: center;
+        }
+        
+        .filter-button {
+            background-color: var(--light-gray);
+            border: none;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--border-radius-md);
+            cursor: pointer;
+            font-weight: 500;
+            transition: all var(--transition-medium);
+        }
+        
+        .filter-button:hover {
+            background-color: var(--gray);
+            color: white;
+        }
+        
+        .filter-button.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-xl);
+        }
+        
+        @media (min-width: 768px) {
+            .testimonial-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .testimonial-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .testimonial-header {
+            padding: var(--spacing-md);
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: var(--light-gray);
+            flex-shrink: 0;
+        }
+        
+        .testimonial-author {
+            flex-grow: 1;
+        }
+        
+        .testimonial-author h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: white;
+        }
+        
+        .testimonial-location {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .testimonial-rating {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-top: var(--spacing-xs);
+        }
+        
+        .testimonial-content {
+            padding: var(--spacing-lg);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .testimonial-text {
+            margin-bottom: var(--spacing-md);
+            flex-grow: 1;
+        }
+        
+        .testimonial-text p {
+            position: relative;
+            padding-left: var(--spacing-lg);
+        }
+        
+        .testimonial-text p::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -5px;
+            font-size: 2rem;
+            color: var(--secondary);
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid var(--light-gray);
+            font-size: 0.9rem;
+        }
+        
+        .testimonial-service {
+            background-color: var(--light-gray);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--border-radius-sm);
+        }
+        
+        .testimonial-date {
+            color: var(--gray);
+        }
+        
+        .testimonial-image {
+            margin-top: var(--spacing-md);
+            height: 200px;
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+        }
+        
+        .featured-testimonial {
+            background-color: var(--light-gray);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xxl);
+        }
+        
+        .featured-testimonial-content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xl);
+        }
+        
+        @media (min-width: 992px) {
+            .featured-testimonial-content {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+        
+        .featured-testimonial-text {
+            flex: 1;
+        }
+        
+        .featured-testimonial-text blockquote {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin: 0 0 var(--spacing-md) 0;
+            padding-left: var(--spacing-lg);
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .featured-testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+        
+        .featured-testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: white;
+        }
+        
+        .featured-testimonial-info h3 {
+            margin: 0 0 var(--spacing-xs) 0;
+        }
+        
+        .featured-testimonial-image {
+            flex: 1;
+            height: 400px;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+        }
+        
+        .video-testimonials {
+            margin-top: var(--spacing-xxl);
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-xl);
+        }
+        
+        @media (min-width: 768px) {
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .video-testimonial {
+            background-color: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .video-placeholder {
+            height: 250px;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            position: relative;
+        }
+        
+        .video-play-button {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .video-play-button i {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        .video-content {
+            padding: var(--spacing-lg);
+        }
+        
+        .video-content h3 {
+            margin-top: 0;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .review-platforms {
+            margin-top: var(--spacing-xxl);
+        }
+        
+        .platform-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+        }
+        
+        @media (min-width: 768px) {
+            .platform-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .platform-card {
+            background-color: white;
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+        
+        .platform-logo {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .platform-logo i {
+            color: var(--primary);
+        }
+        
+        .platform-rating {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .platform-stars {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .platform-count {
+            color: var(--gray);
+            margin-bottom: var(--spacing-md);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../images/Lake-norman-logo.png" alt="Lake Norman Dog Training Logo">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <button class="mobile-menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+                        <span class="hamburger"></span>
+                    </button>
+                    <ul class="nav-list">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="locations.html">Locations</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="testimonials.html" class="active">Testimonials</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-cta">
+                    <a href="contact.html" class="btn btn-primary">Free Consultation</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Testimonials Hero Section -->
+    <section class="testimonials-hero">
+        <div class="container">
+            <div class="testimonials-hero-content">
+                <h1>Client Success Stories</h1>
+                <p>Read what our clients have to say about their experience with Lake Norman Dog Training</p>
+                
+                <div class="testimonial-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4.9</div>
+                        <div class="stat-label">Average Rating</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Would Recommend</div>
+                    </div>
+                </div>
+                
+                <a href="contact.html" class="btn btn-primary btn-large">Join Our Success Stories</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Testimonial -->
+    <section class="section">
+        <div class="container">
+            <div class="featured-testimonial">
+                <div class="section-header">
+                    <h2>Featured Success Story</h2>
+                </div>
+                
+                <div class="featured-testimonial-content">
+                    <div class="featured-testimonial-text">
+                        <blockquote>
+                            "I was at my wit's end with my rescue dog Max's severe anxiety and leash reactivity. After trying three other trainers with little success, I found Lake Norman Dog Training. Sarah's patient, positive approach made all the difference. Within weeks, Max was calmer on walks and could finally enjoy the outdoors without constant stress. Six months later, he's like a different dog—confident, happy, and able to socialize with other dogs at the park. I never thought this transformation was possible!"
+                        </blockquote>
+                        
+                        <div class="featured-testimonial-author">
+                            <div class="featured-testimonial-avatar">
+                                <div class="image-placeholder"></div>
+                            </div>
+                            <div class="featured-testimonial-info">
+                                <h3>Jennifer & Max</h3>
+                                <div class="testimonial-location">Cornelius, NC</div>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="featured-testimonial-image">
+                        <div class="image-placeholder"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-header">
+                <h2>Client Testimonials</h2>
+                <p>Real reviews from dog owners throughout the Lake Norman area</p>
+            </div>
+            
+            <div class="testimonial-filters">
+                <button class="filter-button active">All Services</button>
+                <button class="filter-button">Basic Obedience</button>
+                <button class="filter-button">Puppy Training</button>
+                <button class="filter-button">Behavior Modification</button>
+                <button class="filter-button">Private Training</button>
+                <button class="filter-button">Group Classes</button>
+            </div>
+            
+            <div class="testimonial-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <div class="image-placeholder"></div>
+                        </div>
+                        <div class="testimonial-author">
+                            <h3>Michael T.</h3>
+                            <div class="testimonial-location">Mooresville, NC</div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            <p>Our 8-month-old Lab puppy was full of energy and completely untrained when we started working with Lake Norman Dog Training. After completing the Basic Obedience program, she's like a different dog! She now responds reliably to commands, walks nicely on a leash, and has much better manners around guests. The trainers were patient and made the process fun for both us and our dog.</p>
+                        </div>
+                        <div class="testimonial-image">
+                            <div class="image-placeholder"></div>
+                        </div>
+                        <div class="testimonial-meta">
+                            <div class="testimonial-service">Basic Obedience</div>
+                            <div class="testimonial-date">March 2025</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <div class="image-placeholder"></div>
+                        </div>
+                        <div class="testimonial-author">
+                            <h3>Sarah & David K.</h3>
+                            <div class="testimonial-location">Davidson, NC</div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            <p>We enrolled our 12-week-old Golden Retriever in the Puppy Socialization program, and it was the best decision we could have made. The structured environment helped him learn appropriate play behaviors with other puppies while also building his confidence. Jennifer was amazing at explaining puppy development and helping us understand normal behaviors versus ones we should address. Our puppy is now 8 months old and continues to be well-adjusted and friendly with both people and other dogs.</p>
+                        </div>
+                        <div class="testimonial-image">
+                            <div class="image-placeholder"></div>
+                        </div>
+                        <div class="testimonial-meta">
+                            <div class="testimonial-service">Puppy Training</div>
+                            <div class="testimonial-date">January 2025</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <div class="image-placeholder"></div>
+                        </div>
+                        <div class="testimonial-author">
+                            <h3>Rachel M.</h3>
+                            <div class="testimonial-location">Huntersville, NC</div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            <p>My rescue dog had severe separation anxiety that was affecting both our lives. He would destroy furniture, bark constantly, and show extreme stress whenever I left the house. After working with David on a behavior modification plan, we've seen incredible improvement. The combination of management strategies, desensitization exercises, and confidence-building activities has transformed my dog's response to being alone. I can now leave the house without anxiety for both of us, and my neighbors are much happier too!</p>
+                        </div>
+                        <div class="testimonial-meta">
+                            <div class="testimonial-service">Behavior Modification</div>
+                            <div class="testimonial-date">February 2025</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <div class="image-placeholder"></div>
+                        </div>
+                        <div class="testimonial-author">
+                            <h3>James & Linda P.</h3>
+                            <div class="testimonial-location">Cornelius, NC</div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            <p>We have a boat on Lake Norman and wanted our Labrador to be comfortable and safe on the water. The specialized water training program was exactly what we needed! Our trainer worked with us at the lake, teaching our dog how to safely enter and exit the boat, remain calm while the boat was moving, and even how to swim alongside the boat when appropriate. Now our dog is a confident boat companion, and we can enjoy lake days without worry.</p>
+                        </div>
+                        <div class="testimonial-image">
+                            <div class="image-placeholder"></div>
+                        </div>
+                        <div class="testimonial-meta">
+                            <div class="testimonial-service">Private Training</div>
+                            <div class="testimonial-date">May 2025</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <div class="image-placeholder"></div>
+                        </div>
+                        <div class="testimonial-author">
+                            <h3>Thomas W.</h3>
+                            <div class="testimonial-location">Denver, NC</div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            <p>I was hesitant about group classes, thinking my dog would be too distracted to learn anything. I was completely wrong! The Advanced Obedience group class was structured perfectly to gradually increase distractions while building on core skills. Emily did an excellent job of giving each dog-owner team individual attention while maintaining the group dynamic. My dog learned to focus and respond to commands even with other dogs nearby, which has made a huge difference in our daily walks and outings.</p>
+                        </div>
+                        <div class="testimonial-meta">
+                            <div class="testimonial-service">Group Classes</div>
+                            <div class="testimonial-date">April 2025</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <div class="image-placeholder"></div>
+                        </div>
+                        <div class="testimonial-author">
+                            <h3>Melissa & John B.</h3>
+                            <div class="testimonial-location">Mooresville, NC</div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            <p>Our German Shepherd had developed leash reactivity that made walks stressful and embarrassing. We tried several training approaches on our own without success before contacting Lake Norman Dog Training. The behavior modification program was comprehensive and addressed not just the symptoms but the underlying anxiety causing the reactivity. The trainer gave us clear, manageable homework between sessions, and we saw steady improvement. Six months later, we can walk past other dogs with minimal reaction, something we never thought possible!</p>
+                        </div>
+                        <div class="testimonial-image">
+                            <div class="image-placeholder"></div>
+                        </div>
+                        <div class="testimonial-meta">
+                            <div class="testimonial-service">Behavior Modification</div>
+                            <div class="testimonial-date">March 2025</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: var(--spacing-xl);">
+                <a href="#" class="btn btn-secondary">Load More Testimonials</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Testimonials -->
+    <section class="section video-testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Video Success Stories</h2>
+                <p>See the transformation in action</p>
+            </div>
+            
+            <div class="video-grid">
+                <!-- Video 1 -->
+                <div class="video-testimonial">
+                    <div class="video-placeholder">
+                        <div class="video-play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <p>Video Testimonial</p>
+                    </div>
+                    <div class="video-content">
+                        <h3>Bailey's Transformation</h3>
+                        <p>Watch how Bailey went from an anxious, reactive dog to a confident companion who can enjoy walks and social situations.</p>
+                        <div class="testimonial-meta">
+                            <div class="testimonial-service">Behavior Modification</div>
+                            <div class="testimonial-date">February 2025</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video 2 -->
+                <div class="video-testimonial">
+                    <div class="video-placeholder">
+                        <div class="video-play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <p>Video Testimonial</p>
+                    </div>
+                    <div class="video-content">
+                        <h3>Puppy Class Graduation</h3>
+                        <p>See our latest puppy class graduates showing off their new skills and confidence after completing our 6-week program.</p>
+                        <div class="testimonial-meta">
+                            <div class="testimonial-service">Puppy Training</div>
+                            <div class="testimonial-date">April 2025</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Platforms -->
+    <section class="section review-platforms">
+        <div class="container">
+            <div class="section-header">
+                <h2>Find Us on Review Platforms</h2>
+                <p>See what clients are saying across the web</p>
+            </div>
+            
+            <div class="platform-grid">
+                <!-- Google Reviews -->
+                <div class="platform-card">
+                    <div class="platform-logo">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h3>Google Reviews</h3>
+                    <div class="platform-rating">4.9</div>
+                    <div class="platform-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="platform-count">Based on 187 reviews</div>
+                    <a href="#" class="btn btn-secondary" target="_blank">Read Google Reviews</a>
+                </div>
+                
+                <!-- Yelp -->
+                <div class="platform-card">
+                    <div class="platform-logo">
+                        <i class="fab fa-yelp"></i>
+                    </div>
+                    <h3>Yelp</h3>
+                    <div class="platform-rating">4.8</div>
+                    <div class="platform-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="platform-count">Based on 93 reviews</div>
+                    <a href="#" class="btn btn-secondary" target="_blank">Read Yelp Reviews</a>
+                </div>
+                
+                <!-- Facebook -->
+                <div class="platform-card">
+                    <div class="platform-logo">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <h3>Facebook</h3>
+                    <div class="platform-rating">5.0</div>
+                    <div class="platform-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="platform-count">Based on 142 reviews</div>
+                    <a href="#" class="btn btn-secondary" target="_blank">Read Facebook Reviews</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Write a Review -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Share Your Experience</h2>
+                <p>We appreciate your feedback! If you've worked with us, please consider leaving a review.</p>
+            </div>
+            
+            <div class="text-center">
+                <p>Choose a platform to share your experience:</p>
+                <div class="cta-buttons" style="margin-top: var(--spacing-md);">
+                    <a href="#" class="btn btn-secondary" target="_blank"><i class="fab fa-google"></i> Review on Google</a>
+                    <a href="#" class="btn btn-secondary" target="_blank"><i class="fab fa-yelp"></i> Review on Yelp</a>
+                    <a href="#" class="btn btn-secondary" target="_blank"><i class="fab fa-facebook-f"></i> Review on Facebook</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Dog's Behavior?</h2>
+                <p>Join our growing list of satisfied clients and experience the Lake Norman Dog Training difference.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary btn-large">Schedule a Consultation</a>
+                    <a href="services.html" class="btn btn-secondary btn-large">Explore Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../images/Lake-norman-logo.png" alt="Lake Norman Dog Training Logo">
+                    <p>Your Pack is Our Passion</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="locations.html">Locations</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="testimonials.html">Testimonials</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="services/basic-obedience.html">Basic Obedience</a></li>
+                            <li><a href="services/puppy-training.html">Puppy Training</a></li>
+                            <li><a href="services/behavior-modification.html">Behavior Modification</a></li>
+                            <li><a href="services/private-training.html">Private Training</a></li>
+                            <li><a href="services/group-classes.html">Group Classes</a></li>
+                            <li><a href="services/service-dog-training.html">Service Dog Preparation</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Service Areas</h3>
+                        <ul>
+                            <li><a href="locations/mooresville.html">Mooresville</a></li>
+                            <li><a href="locations/cornelius.html">Cornelius</a></li>
+                            <li><a href="locations/davidson.html">Davidson</a></li>
+                            <li><a href="locations/huntersville.html">Huntersville</a></li>
+                            <li><a href="locations/denver.html">Denver</a></li>
+                            <li><a href="locations.html">View All Locations</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Contact Us</h3>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-phone"></i> <a href="tel:9876543">987-6543</a></li>
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:info@lakenormandogtraining.com">info@lakenormandogtraining.com</a></li>
+                            <li><i class="fas fa-map-marker-alt"></i> Lake Norman, NC</li>
+                        </ul>
+                        <h3>Hours</h3>
+                        <ul class="hours-info">
+                            <li>Tuesday-Saturday: 9:00 AM - 6:00 PM</li>
+                            <li>Sunday: 10:00 AM - 4:00 PM</li>
+                            <li>Monday: Closed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 Lake Norman Dog Training. All Rights Reserved.</p>
+                </div>
+                <div class="legal-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Schema.org JSON-LD for Reviews -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Lake Norman Dog Training",
+        "image": "https://lakenormandogtraining.com/images/Lake-norman-logo.png",
+        "url": "https://lakenormandogtraining.com",
+        "telephone": "9876543",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lake Norman",
+            "addressRegion": "NC",
+            "addressCountry": "US"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "422"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "author": {
+                    "@type": "Person",
+                    "name": "Jennifer"
+                },
+                "datePublished": "2025-02-15",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5"
+                },
+                "reviewBody": "I was at my wit's end with my rescue dog Max's severe anxiety and leash reactivity. After trying three other trainers with little success, I found Lake Norman Dog Training. Sarah's patient, positive approach made all the difference."
+            },
+            {
+                "@type": "Review",
+                "author": {
+                    "@type": "Person",
+                    "name": "Michael T."
+                },
+                "datePublished": "2025-03-10",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5"
+                },
+                "reviewBody": "Our 8-month-old Lab puppy was full of energy and completely untrained when we started working with Lake Norman Dog Training. After completing the Basic Obedience program, she's like a different dog!"
+            }
+        ]
+    }
+    </script>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
+
